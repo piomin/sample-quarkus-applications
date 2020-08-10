@@ -5,3 +5,4 @@ In this project I'm demonstrating the most interesting features of [Quarkus](htt
 ## Getting Started 
 Here's a full list of available examples:
 1. Using Quarkus for building REST application that connects to H2 database using Hibernate ORM. The example is available in the module [employee-service](https://github.com/piomin/sample-quarkus-applications/tree/master/employee-service). A detailed guide may be find in the following article: [Guide to Quarkus with Kotlin](https://piotrminkowski.com/2020/08/09/guide-to-quarkus-with-kotlin/)
+2. Using Quarkus Kubernetes extensions to deploy application easily on Kubernetes. The example is available in the module [employee-service](https://github.com/piomin/sample-quarkus-applications/tree/master/employee-service). A detailed guide may be find in the following article: [Guide to Quarkus on Kubernetes](https://piotrminkowski.com/2020/08/10/guide-to-quarkus-on-kubernetes/)
