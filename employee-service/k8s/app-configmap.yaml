@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: employee-config
+data:
+  application.properties: |-
+    property1=one

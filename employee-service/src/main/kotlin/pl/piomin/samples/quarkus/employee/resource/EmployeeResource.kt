@@ -1,5 +1,6 @@
 package pl.piomin.samples.quarkus.employee.resource
 
+import org.eclipse.microprofile.config.inject.ConfigProperty
 import org.eclipse.microprofile.metrics.MetricUnits
 import org.eclipse.microprofile.metrics.annotation.Timed
 import org.jboss.resteasy.annotations.jaxrs.PathParam
@@ -57,4 +58,10 @@ class EmployeeResource(val repository: EmployeeRepository) {
     fun findBySalaryGreaterThan(@PathParam salary: Int): List<Employee>
             = repository.findBySalaryGreaterThan(salary)
 
+    @ConfigProperty(name = "property1")
+    lateinit var property1: String
+
+    @GET
+    @Path("/property1")
+    fun property1(): String = property1
 }
