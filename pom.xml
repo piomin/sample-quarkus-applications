@@ -26,6 +26,7 @@
 
 	<modules>
 		<module>employee-service</module>
+		<module>employee-secure-service</module>
 	</modules>
 
 	<dependencyManagement>
