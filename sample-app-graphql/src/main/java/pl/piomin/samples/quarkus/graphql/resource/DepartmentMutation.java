@@ -1,6 +1,8 @@
 package pl.piomin.samples.quarkus.graphql.resource;
 
 import org.eclipse.microprofile.graphql.GraphQLApi;
+import org.eclipse.microprofile.graphql.Mutation;
+import org.eclipse.microprofile.graphql.Name;
 import org.eclipse.microprofile.graphql.Query;
 import pl.piomin.samples.quarkus.graphql.domain.Department;
 import pl.piomin.samples.quarkus.graphql.domain.DepartmentInput;
@@ -19,8 +21,8 @@ public class DepartmentMutation {
         this.organizationRepository = organizationRepository;
     }
 
-    @Query("newDepartment")
-    public Department newDepartment(DepartmentInput departmentInput) {
+    @Mutation("newDepartment")
+    public Department newDepartment(@Name("input") DepartmentInput departmentInput) {
         Organization organization = organizationRepository.findById(departmentInput.getOrganizationId());
         Department department = new Department(null, departmentInput.getName(), null, organization);
         departmentRepository.persist(department);
