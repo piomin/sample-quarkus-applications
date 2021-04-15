@@ -20,7 +20,7 @@ public class Organization {
 	@Id
 	@GeneratedValue
 	@EqualsAndHashCode.Include
-	private Integer id;
+	private Long id;
 	private String name;
 	@OneToMany(mappedBy = "organization")
 	private Set<Department> departments;

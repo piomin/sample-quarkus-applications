@@ -16,7 +16,7 @@ public class Employee {
 	@Id
 	@GeneratedValue
 	@EqualsAndHashCode.Include
-	private Integer id;
+	private Long id;
 	private String firstName;
 	private String lastName;
 	private String position;

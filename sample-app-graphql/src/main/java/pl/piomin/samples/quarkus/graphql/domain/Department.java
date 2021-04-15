@@ -17,7 +17,7 @@ public class Department {
 	@Id
 	@GeneratedValue
 	@EqualsAndHashCode.Include
-	private Integer id;
+	private Long id;
 	private String name;
 	@OneToMany(mappedBy = "department")
 	private Set<Employee> employees;

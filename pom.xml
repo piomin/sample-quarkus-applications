@@ -28,6 +28,7 @@
 		<module>employee-service</module>
 		<module>employee-secure-service</module>
         <module>sample-app-graphql</module>
+        <module>performance-tests</module>
     </modules>
 
 	<dependencyManagement>
