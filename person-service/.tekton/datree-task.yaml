@@ -1,0 +1,43 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: datree
+spec:
+  description: >-
+    The Datree (datree.io) task is used to run security scans on Kubernetes manifests
+  workspaces:
+    - name: source
+  params:
+    - name: yamlSrc
+      description: Complete path for the yaml files relative to the workspace path.
+      type: string
+      default: "./*.yaml"
+    - name: policy
+      description: Specify which policy to execute (by policy name). Example-staging
+      type: string
+      default: "Default"
+    - name: token
+      description: The Datree token used to interact with the account on datree.io
+      type: string
+  steps:
+    - name: datree-test
+      image: datree/datree
+      workingDir: $(workspaces.source.path)
+      env:
+        - name: DATREE_TOKEN
+          value: $(params.token)
+        - name: WORKSPACE_PATH
+          value: $(workspaces.source.path)
+        - name: PARAM_YAMLSRC
+          value: $(params.yamlSrc)
+        - name: PARAM_POLICY
+          value: $(params.policy)
+      script: |
+        #!/usr/bin/env sh
+        POLICY_FLAG=""
+
+        if [ "${PARAM_POLICY}" != "" ] ; then
+          POLICY_FLAG="--policy $PARAM_POLICY"
+        fi
+
+        /datree test $WORKSPACE_PATH/$PARAM_YAMLSRC $POLICY_FLAG
