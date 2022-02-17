@@ -11,8 +11,8 @@
 
     <properties>
         <compiler-plugin.version>3.8.1</compiler-plugin.version>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <quarkus.version>2.7.1.Final</quarkus.version>
         <surefire-plugin.version>3.0.0-M5</surefire-plugin.version>
@@ -35,10 +35,10 @@
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-kubernetes</artifactId>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>io.quarkus</groupId>-->
-<!--            <artifactId>quarkus-container-image-jib</artifactId>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-container-image-jib</artifactId>
+        </dependency>
         <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-hibernate-orm-panache</artifactId>
