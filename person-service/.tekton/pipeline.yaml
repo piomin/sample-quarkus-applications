@@ -1,0 +1,56 @@
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: datree-pipeline
+  namespace: datree
+spec:
+  tasks:
+    - name: git-clone
+      params:
+        - name: url
+          value: 'https://github.com/piomin/sample-quarkus-applications.git'
+        - name: userHome
+          value: /tekton/home
+      taskRef:
+        kind: Task
+        name: git-clone
+      workspaces:
+        - name: output
+          workspace: source-dir
+    - name: maven
+      params:
+        - name: GOALS
+          value:
+            - clean
+            - package
+        - name: CONTEXT_DIR
+          value: /person-service
+      runAfter:
+        - git-clone
+      taskRef:
+        kind: Task
+        name: maven
+      workspaces:
+        - name: source
+          workspace: source-dir
+        - name: maven-settings
+          workspace: maven-settings
+    - name: datree
+      params:
+        - name: yamlSrc
+          value: /person-service/target/kubernetes/kubernetes.yml
+        - name: policy
+          value: Default
+        - name: token
+          value: S72AMNQq7Dbg5av8WMv4Wd
+      runAfter:
+        - maven
+      taskRef:
+        kind: Task
+        name: datree
+      workspaces:
+        - name: source
+          workspace: source-dir
+  workspaces:
+    - name: source-dir
+    - name: maven-settings

@@ -1,0 +1,18 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  name: new-pipeline-6l3n7o
+  namespace: datree
+  labels:
+    tekton.dev/pipeline: datree-pipeline
+spec:
+  pipelineRef:
+    name: datree-pipeline
+  serviceAccountName: pipeline
+  workspaces:
+    - name: source-dir
+      persistentVolumeClaim:
+        claimName: tekton-workspace-pvc
+    - configMap:
+        name: maven-settings
+      name: maven-settings
