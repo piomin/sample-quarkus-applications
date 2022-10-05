@@ -30,6 +30,7 @@
         <module>sample-app-graphql</module>
         <module>performance-tests</module>
         <module>person-service</module>
+        <module>person-virtual-service</module>
     </modules>
 
 	<dependencyManagement>
