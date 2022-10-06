@@ -13,6 +13,7 @@ import javax.ws.rs.PathParam;
 import java.util.List;
 
 @Path("/persons")
+@RunOnVirtualThread
 public class PersonResource {
 
     @Inject
@@ -21,35 +22,30 @@ public class PersonResource {
     Logger log;
 
     @POST
-    @RunOnVirtualThread
     public Person addPerson(Person person) {
         person = personRepository.save(person);
         return person;
     }
 
     @GET
-    @RunOnVirtualThread
     public List<Person> getPersons() {
         return personRepository.findAll();
     }
 
     @GET
     @Path("/name/{name}")
-    @RunOnVirtualThread
     public List<Person> getPersonsByName(@PathParam("name") String name) {
         return personRepository.findByName(name);
     }
 
     @GET
     @Path("/age-greater-than/{age}")
-    @RunOnVirtualThread
     public List<Person> getPersonsByName(@PathParam("age") int age) {
         return personRepository.findByAgeGreaterThan(age);
     }
 
     @GET
     @Path("/{id}")
-    @RunOnVirtualThread
     public Person getPersonById(@PathParam("id") Long id) {
         log.infof("(%s) getPersonById(%d)", Thread.currentThread(), id);
         return personRepository.findById(id);
