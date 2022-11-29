@@ -1,6 +1,7 @@
 package pl.piomin.quarkus.person.resource;
 
 
+import org.jboss.logging.Logger;
 import pl.piomin.quarkus.person.model.Person;
 import pl.piomin.quarkus.person.repository.PersonRepository;
 
@@ -17,6 +18,8 @@ public class PersonResource {
 
     @Inject
     PersonRepository personRepository;
+    @Inject
+    Logger log;
 
     @POST
     @Transactional
@@ -45,6 +48,7 @@ public class PersonResource {
     @GET
     @Path("/{id}")
     public Person getPersonById(@PathParam("id") Long id) {
+        log.infof("getPersonById(%d)", id);
         return personRepository.findById(id);
     }
 
