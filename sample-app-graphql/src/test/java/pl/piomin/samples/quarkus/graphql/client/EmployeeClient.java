@@ -1,8 +1,6 @@
 package pl.piomin.samples.quarkus.graphql.client;
 
 import io.smallrye.graphql.client.typesafe.api.GraphQLClientApi;
-import org.eclipse.microprofile.graphql.Name;
-import pl.piomin.samples.quarkus.graphql.domain.EmployeeInput;
 import pl.piomin.samples.quarkus.graphql.filter.EmployeeFilter;
 import pl.piomin.samples.quarkus.graphql.message.Employee;
 

@@ -17,6 +17,4 @@ public class Employee {
 	private String position;
 	private int salary;
 	private int age;
-	private Long departmentId;
-	private Long organizationId;
 }
