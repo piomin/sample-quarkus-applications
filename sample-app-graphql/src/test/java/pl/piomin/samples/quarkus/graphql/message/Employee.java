@@ -1,8 +1,6 @@
 package pl.piomin.samples.quarkus.graphql.message;
 
 import lombok.*;
-import pl.piomin.samples.quarkus.graphql.domain.Department;
-import pl.piomin.samples.quarkus.graphql.domain.Organization;
 
 import javax.persistence.*;
 
@@ -17,4 +15,6 @@ public class Employee {
 	private String position;
 	private int salary;
 	private int age;
+	private Organization organization;
+	private Department department;
 }

@@ -1,7 +1,8 @@
 package pl.piomin.samples.quarkus.graphql.client;
 
 import io.smallrye.graphql.client.typesafe.api.GraphQLClientApi;
-import pl.piomin.samples.quarkus.graphql.domain.Department;
+import org.eclipse.microprofile.graphql.Name;
+import pl.piomin.samples.quarkus.graphql.message.Department;
 
 import java.util.List;
 
@@ -9,6 +10,6 @@ import java.util.List;
 public interface DepartmentClient {
 
     List<Department> departments();
-    Department department(Long id);
-    Department addDepartment(Department department);
+    Department department(@Name("id") Long id);
+    Department addDepartment(@Name("department") Department department);
 }

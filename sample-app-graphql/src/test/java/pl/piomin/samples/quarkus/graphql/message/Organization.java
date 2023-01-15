@@ -7,8 +7,6 @@ import org.eclipse.microprofile.graphql.Name;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Organization {
-//    @Name("id")
     private Long id;
-//    @Name("name")
     private String name;
 }

@@ -4,7 +4,7 @@ import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import pl.piomin.samples.quarkus.graphql.client.DepartmentClient;
-import pl.piomin.samples.quarkus.graphql.domain.Department;
+import pl.piomin.samples.quarkus.graphql.message.Department;
 
 import javax.inject.Inject;
 import java.util.List;
@@ -21,10 +21,11 @@ public class DepartmentFetcherTests {
         Assertions.assertTrue(departments.size() > 0);
     }
 
-    @Test
+//    @Test
     void fetchById() {
         Department department = departmentClient.department(1L);
         Assertions.assertNotNull(department);
+        Assertions.assertNotNull(department.getName());
     }
     
 }

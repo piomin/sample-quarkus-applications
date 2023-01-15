@@ -26,8 +26,9 @@ public class OrganizationFetcherTests {
 
     @Test
     void fetchById() {
-        organizationClient.organization(1L);
-//        Assertions.assertNotNull(organization);
+        Organization organization = organizationClient.organization(1L);
+        Assertions.assertNotNull(organization);
+        Assertions.assertNotNull(organization.getName());
     }
     
 }
