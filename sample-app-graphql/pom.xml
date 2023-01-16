@@ -11,14 +11,6 @@
 
     <artifactId>sample-app-graphql</artifactId>
 
-    <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <quarkus.platform.version>2.2.2.Final</quarkus.platform.version>
-    </properties>
-
     <dependencyManagement>
         <dependencies>
             <dependency>

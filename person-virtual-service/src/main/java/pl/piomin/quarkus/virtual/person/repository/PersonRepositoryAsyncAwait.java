@@ -28,7 +28,7 @@ public class PersonRepositoryAsyncAwait {
     public Person save(Person person) {
         Long id = pgPool
                 .preparedQuery("INSERT INTO person(name, age, gender) VALUES ($1, $2, $3) RETURNING id")
-                .executeAndAwait()
+                .executeAndAwait(Tuple.of(person.getName(), person.getAge(), person.getGender()))
                 .iterator().next().getLong("id");
         person.setId(id);
         return person;

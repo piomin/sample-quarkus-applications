@@ -8,10 +8,19 @@ import org.junit.jupiter.api.Test;
 import pl.piomin.quarkus.virtual.person.model.Person;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.CoreMatchers.is;
 
 
 @QuarkusTest
 public class PersonResourceTests {
+
+    @Test
+    void getAll() {
+        given().get("/persons")
+                .then()
+                .statusCode(200)
+                .assertThat().body("size()", is(1000));
+    }
 
     @Test
     void add() {
@@ -19,8 +28,8 @@ public class PersonResourceTests {
                 .ignore(Select.field("id"))
                 .create();
         given().body(person).contentType(ContentType.JSON)
-                .post("/employees")
+                .post("/persons")
                 .then()
-                .statusCode(201);
+                .statusCode(200);
     }
 }

@@ -96,6 +96,7 @@
                     <target>19</target>
                     <compilerArgs>
                         <arg>--enable-preview</arg>
+                        <arg>-Dnet.bytebuddy.experimental</arg>
                     </compilerArgs>
                     <jvmArgs>--enable-preview --add-opens java.base/java.lang=ALL-UNNAMED</jvmArgs>
                 </configuration>
@@ -114,6 +115,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${surefire-plugin.version}</version>
                 <configuration>
+                    <argLine>--enable-preview</argLine>
                     <systemPropertyVariables>
                         <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
                     </systemPropertyVariables>
@@ -125,6 +127,7 @@
                 <configuration>
                     <source>19</source>
                     <target>19</target>
+                    <compilerArgs>--enable-preview</compilerArgs>
                 </configuration>
             </plugin>
         </plugins>
