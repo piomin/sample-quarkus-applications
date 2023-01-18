@@ -12,19 +12,24 @@ jobs:
 
 orbs:
   maven: circleci/maven@1.4.0
+  tcc: atomicjar/testcontainers-cloud-orb@0.1.0
 
 executors:
-  machine_executor_amd64:
-    machine:
-      image: ubuntu-2204:2022.04.2
-    environment:
-      architecture: "amd64"
-      platform: "linux/amd64"
+  j19:
+    docker:
+      - image: 'cimg/openjdk:19.0'
+#  machine_executor_amd64:
+#    machine:
+#      image: ubuntu-2204:2022.04.2
+#    environment:
+#      architecture: "amd64"
+#      platform: "linux/amd64"
 
 workflows:
   maven_test:
     jobs:
       - maven/test:
-          executor: machine_executor_amd64
+          executor: j19
+          context: Testcontainers
       - analyze:
           context: SonarCloud
