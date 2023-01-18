@@ -31,5 +31,7 @@ workflows:
       - maven/test:
           executor: j19
           context: Testcontainers
+          pre-steps:
+            - tcc/setup
       - analyze:
           context: SonarCloud
