@@ -11,6 +11,10 @@
 
 	<artifactId>employee-secure-service</artifactId>
 
+	<properties>
+		<sonar.moduleKey>${artifactId}</sonar.moduleKey>
+	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>io.quarkus</groupId>

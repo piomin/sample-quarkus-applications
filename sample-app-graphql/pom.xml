@@ -11,6 +11,10 @@
 
     <artifactId>sample-app-graphql</artifactId>
 
+    <properties>
+        <sonar.moduleKey>${artifactId}</sonar.moduleKey>
+    </properties>
+
     <dependencyManagement>
         <dependencies>
             <dependency>

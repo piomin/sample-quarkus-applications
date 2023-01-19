@@ -8,6 +8,10 @@
     <artifactId>performance-tests</artifactId>
     <version>1.0</version>
 
+    <properties>
+        <sonar.moduleKey>${artifactId}</sonar.moduleKey>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>io.gatling.highcharts</groupId>

@@ -17,6 +17,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <quarkus.version>2.13.0.Final</quarkus.version>
         <surefire-plugin.version>3.0.0-M5</surefire-plugin.version>
+        <sonar.moduleKey>${artifactId}</sonar.moduleKey>
     </properties>
 
     <dependencyManagement>
