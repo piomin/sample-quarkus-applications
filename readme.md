@@ -1,5 +1,12 @@
 # Guide to Quarkus Demo Project [![Twitter](https://img.shields.io/twitter/follow/piotr_minkowski.svg?style=social&logo=twitter&label=Follow%20Me)](https://twitter.com/piotr_minkowski)
 
+[![CircleCI](https://circleci.com/gh/piomin/sample-quarkus-applications.svg?style=svg)](https://circleci.com/gh/piomin/sample-quarkus-applications)
+
+[![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-black.svg)](https://sonarcloud.io/dashboard?id=piomin_sample-quarkus-applications)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=piomin_sample-quarkus-applications&metric=bugs)](https://sonarcloud.io/dashboard?id=piomin_sample-quarkus-applications)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=piomin_sample-quarkus-applications&metric=coverage)](https://sonarcloud.io/dashboard?id=piomin_sample-quarkus-applications)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=piomin_sample-quarkus-applications&metric=ncloc)](https://sonarcloud.io/dashboard?id=piomin_sample-quarkus-applications)
+
 In this project I'm demonstrating the most interesting features of [Quarkus](https://quarkus.io/) for building applications in Kotlin.
 
 ## Getting Started 
