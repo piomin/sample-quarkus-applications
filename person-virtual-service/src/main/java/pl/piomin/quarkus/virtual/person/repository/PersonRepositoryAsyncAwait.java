@@ -83,15 +83,13 @@ public class PersonRepositoryAsyncAwait {
     }
 
     private void initDb() {
-        List<Tuple> persons = new ArrayList<>(1000);
         Faker faker = new Faker();
-        for (int i = 0; i < 1000; i++) {
-            String name = faker.name().fullName();
-            String gender = faker.gender().binaryTypes().toUpperCase();
-            int age = faker.number().numberBetween(18, 65);
-            int externalId = faker.number().numberBetween(100000, 999999);
-            persons.add(Tuple.of(name, age, gender, externalId));
-        }
+        List<Tuple> persons = faker.<Tuple>collection
+                (() -> Tuple.of(faker.name().fullName(), 
+                        faker.gender().binaryTypes().toUpperCase(), 
+                        faker.number().numberBetween(18, 65), 
+                        faker.number().numberBetween(100000, 999999))
+                ).len(1000).build().get();
 
         pgPool.query("DROP TABLE IF EXISTS person").execute()
                 .flatMap(r -> pgPool.query("""
