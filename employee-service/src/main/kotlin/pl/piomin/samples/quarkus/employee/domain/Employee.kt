@@ -1,7 +1,7 @@
 package pl.piomin.samples.quarkus.employee.domain
 
 import io.quarkus.hibernate.orm.panache.kotlin.PanacheEntity
-import javax.persistence.Entity
+import jakarta.persistence.Entity
 
 @Entity
 data class Employee(var firstName: String = "",

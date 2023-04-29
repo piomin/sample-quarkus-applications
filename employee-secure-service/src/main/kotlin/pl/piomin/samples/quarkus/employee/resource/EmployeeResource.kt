@@ -3,12 +3,12 @@ package pl.piomin.samples.quarkus.employee.resource
 import org.jboss.resteasy.annotations.jaxrs.PathParam
 import pl.piomin.samples.quarkus.employee.domain.Employee
 import pl.piomin.samples.quarkus.employee.repository.EmployeeRepository
-import javax.annotation.security.PermitAll
-import javax.annotation.security.RolesAllowed
-import javax.transaction.Transactional
-import javax.ws.rs.*
-import javax.ws.rs.core.MediaType
-import javax.ws.rs.core.Response
+import jakarta.annotation.security.PermitAll
+import jakarta.annotation.security.RolesAllowed
+import jakarta.transaction.Transactional
+import jakarta.ws.rs.*
+import jakarta.ws.rs.core.MediaType
+import jakarta.ws.rs.core.Response
 
 @Path("/employees")
 @Produces(MediaType.APPLICATION_JSON)

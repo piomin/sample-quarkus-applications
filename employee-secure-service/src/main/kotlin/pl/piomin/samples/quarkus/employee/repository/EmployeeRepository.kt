@@ -2,7 +2,7 @@ package pl.piomin.samples.quarkus.employee.repository
 
 import io.quarkus.hibernate.orm.panache.kotlin.PanacheRepository
 import pl.piomin.samples.quarkus.employee.domain.Employee
-import javax.enterprise.context.ApplicationScoped
+import jakarta.enterprise.context.ApplicationScoped
 
 @ApplicationScoped
 class EmployeeRepository: PanacheRepository<Employee> {

@@ -6,10 +6,10 @@ import org.eclipse.microprofile.metrics.annotation.Timed
 import org.jboss.resteasy.annotations.jaxrs.PathParam
 import pl.piomin.samples.quarkus.employee.domain.Employee
 import pl.piomin.samples.quarkus.employee.repository.EmployeeRepository
-import javax.transaction.Transactional
-import javax.ws.rs.*
-import javax.ws.rs.core.MediaType
-import javax.ws.rs.core.Response
+import jakarta.transaction.Transactional
+import jakarta.ws.rs.*
+import jakarta.ws.rs.core.MediaType
+import jakarta.ws.rs.core.Response
 
 @Path("/employees")
 @Produces(MediaType.APPLICATION_JSON)

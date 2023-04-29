@@ -3,7 +3,7 @@ package pl.piomin.quarkus.person.repository;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
 import pl.piomin.quarkus.person.model.Person;
 
-import javax.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.context.ApplicationScoped;
 import java.util.List;
 
 @ApplicationScoped

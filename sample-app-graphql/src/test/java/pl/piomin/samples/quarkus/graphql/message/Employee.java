@@ -2,7 +2,7 @@ package pl.piomin.samples.quarkus.graphql.message;
 
 import lombok.*;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Getter
 @Setter
