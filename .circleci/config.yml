@@ -15,21 +15,15 @@ orbs:
   tcc: atomicjar/testcontainers-cloud-orb@0.1.0
 
 executors:
-  j19:
+  jdk:
     docker:
       - image: 'cimg/openjdk:19.0'
-#  machine_executor_amd64:
-#    machine:
-#      image: ubuntu-2204:2022.04.2
-#    environment:
-#      architecture: "amd64"
-#      platform: "linux/amd64"
 
 workflows:
   maven_test:
     jobs:
       - maven/test:
-          executor: j19
+          executor: jdk
           context: Testcontainers
           pre-steps:
             - tcc/setup
