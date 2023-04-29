@@ -2,9 +2,9 @@ package pl.piomin.samples.quarkus.graphql.filter;
 
 import lombok.Data;
 
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.Path;
-import javax.persistence.criteria.Predicate;
+import jakarta.persistence.criteria.CriteriaBuilder;
+import jakarta.persistence.criteria.Path;
+import jakarta.persistence.criteria.Predicate;
 
 @Data
 public class FilterField {

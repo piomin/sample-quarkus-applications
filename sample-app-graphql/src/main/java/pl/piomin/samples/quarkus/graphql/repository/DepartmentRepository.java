@@ -7,10 +7,9 @@ import io.smallrye.graphql.api.Context;
 import pl.piomin.samples.quarkus.graphql.domain.Department;
 import pl.piomin.samples.quarkus.graphql.domain.Employee;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
-import javax.persistence.EntityManager;
-import javax.persistence.criteria.*;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.criteria.*;
 import java.util.List;
 
 @ApplicationScoped

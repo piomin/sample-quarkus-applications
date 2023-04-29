@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import pl.piomin.samples.quarkus.graphql.client.OrganizationClient;
 import pl.piomin.samples.quarkus.graphql.message.Organization;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 import java.util.List;
 
 

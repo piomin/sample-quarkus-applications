@@ -8,7 +8,6 @@ import io.vertx.mutiny.sqlclient.Tuple;
 import net.datafaker.Faker;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.jboss.logging.Logger;
-import pl.piomin.quarkus.virtual.person.model.Gender;
 import pl.piomin.quarkus.virtual.person.model.Person;
 
 import javax.enterprise.context.ApplicationScoped;

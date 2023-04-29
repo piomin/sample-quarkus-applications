@@ -5,9 +5,9 @@ import pl.piomin.samples.quarkus.graphql.domain.Department;
 import pl.piomin.samples.quarkus.graphql.domain.Employee;
 import pl.piomin.samples.quarkus.graphql.domain.Organization;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.enterprise.event.Observes;
-import javax.transaction.Transactional;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.event.Observes;
+import jakarta.transaction.Transactional;
 
 @ApplicationScoped
 public class DemoDataStartup {

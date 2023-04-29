@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import pl.piomin.samples.quarkus.graphql.client.DepartmentClient;
 import pl.piomin.samples.quarkus.graphql.message.Department;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 import java.util.List;
 
 @QuarkusTest

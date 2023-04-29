@@ -8,7 +8,7 @@ import pl.piomin.samples.quarkus.graphql.filter.EmployeeFilter;
 import pl.piomin.samples.quarkus.graphql.filter.FilterField;
 import pl.piomin.samples.quarkus.graphql.message.Employee;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 import java.util.List;
 
 @QuarkusTest
