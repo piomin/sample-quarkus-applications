@@ -32,6 +32,7 @@
         <module>performance-tests</module>
         <module>person-service</module>
         <module>person-virtual-service</module>
+        <module>person-grpc-service</module>
     </modules>
 
     <dependencyManagement>

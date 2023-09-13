@@ -41,7 +41,7 @@ public class PersonResource {
 
     @GET
     @Path("/age-greater-than/{age}")
-    public List<Person> getPersonsByName(@PathParam("age") int age) {
+    public List<Person> getPersonsByAge(@PathParam("age") int age) {
         return personRepository.findByAgeGreaterThan(age);
     }
 

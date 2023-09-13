@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package model;
+
+option java_package = "pl.piomin.quarkus.grpc.model";
+option java_outer_classname = "PersonProto";
+
+// (1)
+import "google/protobuf/empty.proto";
+import "google/protobuf/wrappers.proto";
+
+// (2)
+service PersonsService {
+  rpc FindByName(google.protobuf.StringValue) returns (Persons) {}
+  rpc FindByAge(google.protobuf.Int32Value) returns (Persons) {}
+  rpc FindById(google.protobuf.Int64Value) returns (Person) {}
+  rpc FindAll(google.protobuf.Empty) returns (Persons) {}
+  rpc AddPerson(Person) returns (Person) {}
+}
+
+// (3)
+message Person {
+  int64 id = 1;
+  string name = 2;
+  int32 age = 3;
+  Gender gender = 4;
+}
+
+// (4)
+message Persons {
+  repeated Person person = 1;
+}
+
+// (5)
+enum Gender {
+  MALE = 0;
+  FEMALE = 1;
+}
