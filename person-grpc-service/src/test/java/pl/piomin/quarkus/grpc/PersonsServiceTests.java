@@ -1,7 +1,9 @@
 package pl.piomin.quarkus.grpc;
 
 import com.google.protobuf.Empty;
+import com.google.protobuf.Int32Value;
 import com.google.protobuf.Int64Value;
+import com.google.protobuf.StringValue;
 import io.quarkus.grpc.GrpcClient;
 import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.MethodOrderer;
@@ -64,5 +66,27 @@ public class PersonsServiceTests {
         assertNotNull(p);
         assertEquals("Test", p.getName());
         assertEquals(newId, p.getId());
+    }
+
+    @Test
+    @Order(2)
+    void shouldFindByAge() throws ExecutionException, InterruptedException, TimeoutException {
+        CompletableFuture<PersonProto.Persons> message = new CompletableFuture<>();
+        client.findByAge(Int32Value.newBuilder().setValue(20).build())
+                .subscribe().with(message::complete);
+        PersonProto.Persons p = message.get(1, TimeUnit.SECONDS);
+        assertNotNull(p);
+        assertEquals(1, p.getPersonCount());
+    }
+
+    @Test
+    @Order(2)
+    void shouldFindByName() throws ExecutionException, InterruptedException, TimeoutException {
+        CompletableFuture<PersonProto.Persons> message = new CompletableFuture<>();
+        client.findByName(StringValue.newBuilder().setValue("Test").build())
+                .subscribe().with(message::complete);
+        PersonProto.Persons p = message.get(1, TimeUnit.SECONDS);
+        assertNotNull(p);
+        assertEquals(1, p.getPersonCount());
     }
 }

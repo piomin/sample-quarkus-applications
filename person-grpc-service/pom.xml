@@ -14,6 +14,8 @@
 
     <properties>
         <sonar.moduleKey>${artifactId}</sonar.moduleKey>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
     <dependencies>
@@ -103,6 +105,24 @@
                     <artifactId>quarkus-vertx-http</artifactId>
                 </dependency>
             </dependencies>
+        </profile>
+        <profile>
+            <id>openshift</id>
+            <activation>
+                <property>
+                    <name>openshift</name>
+                </property>
+            </activation>
+            <dependencies>
+                <dependency>
+                    <groupId>io.quarkus</groupId>
+                    <artifactId>quarkus-openshift</artifactId>
+                </dependency>
+            </dependencies>
+            <properties>
+                <quarkus.kubernetes.deploy>true</quarkus.kubernetes.deploy>
+                <quarkus.profile>openshift</quarkus.profile>
+            </properties>
         </profile>
         <profile>
             <id>native</id>

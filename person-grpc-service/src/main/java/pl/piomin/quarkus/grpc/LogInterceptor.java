@@ -19,7 +19,7 @@ public class LogInterceptor  implements ServerInterceptor {
         ServerCall<ReqT, RespT> listener = new ForwardingServerCall.SimpleForwardingServerCall<ReqT, RespT>(call) {
             @Override
             public void sendMessage(RespT message) {
-                log.infof("[Sending message] %s",  message);
+                log.infof("[Sending message] %s",  message.toString().replaceAll("\n", " "));
                 super.sendMessage(message);
             }
         };
@@ -27,7 +27,7 @@ public class LogInterceptor  implements ServerInterceptor {
         return new ForwardingServerCallListener.SimpleForwardingServerCallListener<ReqT>(next.startCall(listener, headers)) {
             @Override
             public void onMessage(ReqT message) {
-                log.infof("[Received message] %s", message);
+                log.infof("[Received message] %s", message.toString().replaceAll("\n", " "));
                 super.onMessage(message);
             }
         };
