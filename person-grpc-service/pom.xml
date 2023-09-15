@@ -98,15 +98,6 @@
 
     <profiles>
         <profile>
-            <id>development</id>
-            <dependencies>
-                <dependency>
-                    <groupId>io.quarkus</groupId>
-                    <artifactId>quarkus-vertx-http</artifactId>
-                </dependency>
-            </dependencies>
-        </profile>
-        <profile>
             <id>openshift</id>
             <activation>
                 <property>
