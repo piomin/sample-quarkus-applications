@@ -22,7 +22,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <quarkus.plugin.version>3.6.3</quarkus.plugin.version>
         <quarkus.platform.version>3.6.3</quarkus.platform.version>
-        <surefire-plugin.version>3.2.2</surefire-plugin.version>
+        <surefire-plugin.version>3.2.3</surefire-plugin.version>
     </properties>
 
     <modules>
