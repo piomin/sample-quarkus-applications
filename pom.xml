@@ -33,6 +33,7 @@
         <module>person-service</module>
         <module>person-virtual-service</module>
         <module>person-grpc-service</module>
+        <module>account-function</module>
     </modules>
 
     <dependencyManagement>
