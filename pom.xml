@@ -13,16 +13,15 @@
         <sonar.projectKey>piomin_sample-quarkus-applications</sonar.projectKey>
         <sonar.organization>piomin</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-        <compiler-plugin.version>3.11.0</compiler-plugin.version>
-        <kotlin.version>1.9.10</kotlin.version>
+        <compiler-plugin.version>3.12.1</compiler-plugin.version>
+        <kotlin.version>1.9.22</kotlin.version>
         <maven.compiler.parameters>true</maven.compiler.parameters>
         <maven.compiler.source>20</maven.compiler.source>
         <maven.compiler.target>20</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <quarkus.plugin.version>3.4.3</quarkus.plugin.version>
-        <quarkus.platform.version>3.4.3</quarkus.platform.version>
-        <surefire-plugin.version>3.1.2</surefire-plugin.version>
+        <quarkus.platform.version>3.6.8</quarkus.platform.version>
+        <surefire-plugin.version>3.2.5</surefire-plugin.version>
     </properties>
 
     <modules>
@@ -33,6 +32,7 @@
         <module>person-service</module>
         <module>person-virtual-service</module>
         <module>person-grpc-service</module>
+        <module>account-function</module>
     </modules>
 
     <dependencyManagement>
