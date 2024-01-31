@@ -1,6 +1,5 @@
 package pl.piomin.services.quarkus.function.account;
 
-import com.microsoft.azure.functions.annotation.FunctionName;
 import io.quarkus.funqy.Funq;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
@@ -12,19 +11,17 @@ public class AccountFunctionResource {
     @Inject
     Logger log;
 
-//    @FunctionName("add-account")
     @Funq("add-account")
     @Transactional
     public Account addAccount(Account account) {
-        log.info(account);
+        log.infof("Add: %s", account);
         Account.persist(account);
         return account;
     }
 
-//    @FunctionName("find-by-number")
     @Funq("by-number")
     public Account findByNumber(Account account) {
-        log.info(account.number);
+        log.infof("Find: %s", account.number);
         return Account
                 .find("number", account.number)
                 .singleResult();

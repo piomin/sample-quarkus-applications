@@ -14,21 +14,8 @@
 
     <properties>
         <maven.compiler.release>17</maven.compiler.release>
-        <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
-        <quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>
     </properties>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>${quarkus.platform.group-id}</groupId>
-                <artifactId>${quarkus.platform.artifact-id}</artifactId>
-                <version>${quarkus.platform.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
     <dependencies>
         <dependency>
             <groupId>io.quarkus</groupId>
@@ -48,14 +35,6 @@
         </dependency>
         <dependency>
             <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-arc</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.microsoft.azure.functions</groupId>
-            <artifactId>azure-functions-java-library</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.quarkus</groupId>
             <artifactId>quarkus-junit5</artifactId>
             <scope>test</scope>
         </dependency>
@@ -69,7 +48,7 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>${quarkus.platform.group-id}</groupId>
+                <groupId>io.quarkus</groupId>
                 <artifactId>quarkus-maven-plugin</artifactId>
                 <version>${quarkus.platform.version}</version>
                 <extensions>true</extensions>
@@ -120,35 +99,6 @@
                     </systemPropertyVariables>
                 </configuration>
             </plugin>
-<!--            <plugin>-->
-<!--                <groupId>com.microsoft.azure</groupId>-->
-<!--                <artifactId>azure-functions-maven-plugin</artifactId>-->
-<!--                <version>1.30.0</version>-->
-<!--                <configuration>-->
-<!--                    <appName>pminkows-account-function</appName>-->
-<!--                    <region>eastus</region>-->
-<!--                    <resourceGroup>quarkus-serverless</resourceGroup>-->
-<!--                    <appServicePlanName>EastUSLinuxDynamicPlan</appServicePlanName>-->
-<!--                    <runtime>-->
-<!--                        <os>linux</os>-->
-<!--                        <javaVersion>17</javaVersion>-->
-<!--                    </runtime>-->
-<!--                    <appSettings>-->
-<!--                        <property>-->
-<!--                            <name>FUNCTIONS_EXTENSION_VERSION</name>-->
-<!--                            <value>~4</value>-->
-<!--                        </property>-->
-<!--                    </appSettings>-->
-<!--                </configuration>-->
-<!--                <executions>-->
-<!--                    <execution>-->
-<!--                        <id>package-functions</id>-->
-<!--                        <goals>-->
-<!--                            <goal>package</goal>-->
-<!--                        </goals>-->
-<!--                    </execution>-->
-<!--                </executions>-->
-<!--            </plugin>-->
         </plugins>
     </build>
 
