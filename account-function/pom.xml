@@ -13,7 +13,6 @@
     <artifactId>account-function</artifactId>
 
     <properties>
-        <maven.compiler.release>17</maven.compiler.release>
         <sonar.moduleKey>${artifactId}</sonar.moduleKey>
     </properties>
 
