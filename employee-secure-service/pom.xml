@@ -68,7 +68,7 @@
         <sourceDirectory>src/main/kotlin</sourceDirectory>
         <plugins>
             <plugin>
-                <groupId>io.quarkus</groupId>
+                <groupId>io.quarkus.platform</groupId>
                 <artifactId>quarkus-maven-plugin</artifactId>
                 <version>${quarkus.platform.version}</version>
                 <executions>
