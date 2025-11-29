@@ -78,10 +78,6 @@
                 <configuration>
                     <source>${maven.compiler.source}</source>
                     <target>${maven.compiler.target}</target>
-                    <compilerArgs>
-<!--                        <arg>&#45;&#45;enable-preview</arg>-->
-                        <arg>-Dnet.bytebuddy.experimental</arg>
-                    </compilerArgs>
                     <jvmArgs>--add-opens java.base/java.lang=ALL-UNNAMED</jvmArgs>
                 </configuration>
             </plugin>

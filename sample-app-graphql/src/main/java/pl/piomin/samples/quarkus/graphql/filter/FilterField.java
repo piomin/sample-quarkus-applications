@@ -1,15 +1,36 @@
 package pl.piomin.samples.quarkus.graphql.filter;
 
-import lombok.Data;
-
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.Path;
 import jakarta.persistence.criteria.Predicate;
 
-@Data
 public class FilterField {
 	private String operator;
 	private String value;
+
+	public FilterField() {
+	}
+
+	public FilterField(String operator, String value) {
+		this.operator = operator;
+		this.value = value;
+	}
+
+	public String getOperator() {
+		return operator;
+	}
+
+	public void setOperator(String operator) {
+		this.operator = operator;
+	}
+
+	public String getValue() {
+		return value;
+	}
+
+	public void setValue(String value) {
+		this.value = value;
+	}
 
 	public Predicate generateCriteria(CriteriaBuilder builder, Path field) {
 		try {
