@@ -13,5 +13,6 @@ public class Person extends PanacheEntityBase {
     public int age;
     @Enumerated(EnumType.STRING)
     public Gender gender;
+    @Column(name = "external_id")
     public Integer externalId;
 }
