@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   analyze:
     docker:
-      - image: 'cimg/openjdk:21.0.6'
+      - image: 'cimg/openjdk:25.0'
     steps:
       - checkout
       - run:
@@ -14,25 +14,16 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Install OpenJDK 21
-          command: |
-            java -version
-            sudo apt-get update && sudo apt-get install openjdk-21-jdk
-            sudo update-alternatives --set java /usr/lib/jvm/java-21-openjdk-amd64/bin/java
-            sudo update-alternatives --set javac /usr/lib/jvm/java-21-openjdk-amd64/bin/javac
-            java -version
-            export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
-      - run:
           name: Maven Tests
           command: mvn test
 
 orbs:
-  maven: circleci/maven@2.0.0
+  maven: circleci/maven@2.1.1
 
 executors:
   machine_executor_amd64:
     machine:
-      image: ubuntu-2204:2023.10.1
+      image: ubuntu-2204:current
     environment:
       architecture: "amd64"
       platform: "linux/amd64"
