@@ -20,12 +20,12 @@ public class EmployeeFetcher {
 
     @Query("employees")
     public List<Employee> findAll() {
-        return repository.listAll();
+        return repository.findAllWithCriteria();
     }
 
     @Query("employee")
     public Employee findById(@Name("id") Long id) {
-        return repository.findById(id);
+        return repository.findByIdWithCriteria(id);
     }
 
     @Query("employeesWithFilter")
