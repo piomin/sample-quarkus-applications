@@ -64,7 +64,7 @@ public class EmployeeRepository implements PanacheRepository<Employee> {
                     builder.and(predicate, filter.getPosition().generateCriteria(builder, root.get("position"))));
 
         if (predicate != null)
-            criteriaQuery.where(predicate);
+            criteriaQuery.where(predicate).distinct(true);
 
         return em.createQuery(criteriaQuery).getResultList();
     }
